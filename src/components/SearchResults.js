@@ -19,8 +19,10 @@ class SearchResults extends React.Component  {
         //console.log(cardIndex)
     }
 
+
+
         render() {
-            console.log(this.props)
+            //console.log(this.props)
            // const active = this.state.index === this.props.images.id ? 'Active' : '';
 
              const imageList = this.props.image.map(image =>{

@@ -25,7 +25,8 @@ const [favorites, setFavorites] = useState([]);
   }
 
   const addToFavoritesList = (favorite) => {
-    setFavorites(favorites);
+    
+    setFavorites([...favorites, favorite]);
    // console.log(favorites)
   }
 
@@ -40,7 +41,7 @@ const [favorites, setFavorites] = useState([]);
       <Switch>
       <Route  exact path ='/' 
         render={() =>
-          <HomePage onSubmit={onSearchSubmit} images={images} addToFavorites={addToFavoritesList}/>} 
+          <HomePage onSubmit={onSearchSubmit} images={images} addToFav={addToFavoritesList}/>} 
           />
 
       <Route exact path ='/favorites' 

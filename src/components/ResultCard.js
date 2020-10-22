@@ -60,13 +60,13 @@ class ResultCard extends React.Component {
                 </div>
                     
                 <div className={`${active} content`}>
-                    <ul>
-                        <li>Description: {this.props.image.description}</li>
-                        <li>Url: {this.props.image.urls.regular}</li>
-                        <li>Photographer: {this.props.image.user.name} </li>
-                        <li>Instagram handle: {this.props.image.user.instagram_username}</li>
-                        <li><button onClick={this.onButtonClick}> Add to favorites?</button></li>
-                    </ul>
+                    <div className="ui list">
+                        <div className="item"><b>Description:</b> {this.props.image.description}</div>
+                        {/* <div className="item"><b>Url:</b> {this.props.image.urls.regular}</div> */}
+                        <div className="item"><b>Photographer:</b> {this.props.image.user.name} </div>
+                        <div className="item"><b>Instagram handle:</b> {this.props.image.user.instagram_username}</div>
+                        <div className="item"><button onClick={this.onButtonClick}> Add to favorites?</button></div>
+                    </div>
                     
                 </div>
 

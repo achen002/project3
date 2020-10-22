@@ -1,21 +1,48 @@
 import { render } from '@testing-library/react'
 import React from 'react'
+import './Favorites.css'
+
+import ResultCard from './ResultCard'
 
 
-const Favorites = (props) => {
-    console.log(props)
+class Favorites extends React.Component{
+    constructor(props) {
+        super(props)
 
-    const listofFav = props.favorite.map(elem =>{
-        return <div>{elem.description}</div>
+        this.state = {
+            imageList : this.props.favorite
+        }
+    }
+
+
+
+
+    render() {
+
+        //console.log(this.state.imageList)
+
+    const listofFav = this.state.imageList.map(image =>{
+        return  <ResultCard 
+        key={image.id} 
+        image={image}  
+        onImgClick={this.onTitleClick} 
+        imageId={image.id}
+        addToFavorites={this.props.addToFavorites}
+        isActive={this.state.index===image.id ? 'Active' : ''}
+        
+    />
     })
-    return (
-            <div>
-                This is the favorites:
-                {listofFav}
-            </div>
+
+        return (
+                    <div className="image-list">
+                        {listofFav}
+                    </div>
 
 
-    )
+            )
+
+    }
+    
 
 }
 
