@@ -10,11 +10,17 @@ class Favorites extends React.Component{
         super(props)
 
         this.state = {
-            imageList : this.props.favorite
+            imageList : this.props.favorite,
+            index : null
         }
     }
 
-
+    onTitleClick = (cardIndex) => {
+        this.setState({
+            index: cardIndex
+        })
+        //console.log(cardIndex)
+    }
 
 
     render() {
