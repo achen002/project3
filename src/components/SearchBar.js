@@ -26,7 +26,7 @@ const SearchBar= (props) =>{
             
                 <form className="ui form" onSubmit={(e) =>onFormSubmit(e)}>
                     <div className="field">
-                        <label> Image Search
+                        <label> Search for an image:
                             <input type="text" value={term} onChange={(e) =>onInputChange(e)}/>
                         </label>
                         

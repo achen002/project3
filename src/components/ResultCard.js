@@ -65,7 +65,7 @@ class ResultCard extends React.Component {
                         {/* <div className="item"><b>Url:</b> {this.props.image.urls.regular}</div> */}
                         <div className="item"><b>Photographer:</b> {this.props.image.user.name} </div>
                         <div className="item"><b>Instagram handle:</b> {this.props.image.user.instagram_username}</div>
-                        <div className="item"><button onClick={this.onButtonClick}> Add to favorites</button></div>
+                        {!this.props.isFav && <div className="item"><button onClick={this.onButtonClick}> Add to favorites</button></div>}
                     </div>
                     
                 </div>

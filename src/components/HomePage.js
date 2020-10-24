@@ -11,6 +11,7 @@ const HomePage = (props) => {
 
     return(
         <div className="ui container">
+            <h2>Image Search</h2>
             <SearchBar onSubmit={props.onSubmit} />
             <SearchResults image={props.images} addToFavorites={props.addToFav}/>
             

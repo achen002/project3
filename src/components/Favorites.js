@@ -11,7 +11,8 @@ class Favorites extends React.Component{
 
         this.state = {
             imageList : this.props.favorite,
-            index : null
+            index : null,
+            isFav : true,
         }
     }
 
@@ -25,7 +26,10 @@ class Favorites extends React.Component{
 
     render() {
 
-        //console.log(this.state.imageList)
+        const divStyle = {
+            textAlign : 'center',
+            marginBottom : '25px'
+        }
 
     const listofFav = this.state.imageList.map(image =>{
         return  <ResultCard 
@@ -34,16 +38,25 @@ class Favorites extends React.Component{
         onImgClick={this.onTitleClick} 
         imageId={image.id}
         addToFavorites={this.props.addToFavorites}
+        isFav={this.state.isFav}
         isActive={this.state.index===image.id ? 'Active' : ''}
         
     />
     })
 
-        return (
-                    <div className="image-list">
-                        {listofFav}
-                    </div>
+        return (    
+                    <div className="ui center aligned containter">
 
+                        <div >
+                            <h2 style={divStyle}>Favorite Images</h2>
+                        </div>
+                        
+                            <div className="image-list">
+                                {listofFav}
+                            </div>
+
+                    </div>
+                    
 
             )
 
